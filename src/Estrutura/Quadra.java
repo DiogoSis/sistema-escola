@@ -10,7 +10,7 @@ public class Quadra {
         this.disponivel = true; // Inicialmente, a quadra está disponível
     }
 
-    // Método para reservar a quadra
+    //reservar a quadra
     public void reservar() {
         if (disponivel) {
             disponivel = false;
@@ -20,7 +20,7 @@ public class Quadra {
         }
     }
 
-    // Método para liberar a quadra
+    //liberar a quadra
     public void liberar() {
         if (!disponivel) {
             disponivel = true;

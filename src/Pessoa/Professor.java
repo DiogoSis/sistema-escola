@@ -23,7 +23,7 @@ public class Professor {
         notasPorDisciplina.put(disciplina, new HashMap<>());
     }
 
-    // Método para atribuir nota a um aluno em uma disciplina
+    //nota a um aluno em uma disciplina
     public void atribuirNota(String disciplina, Aluno aluno, double nota) {
         if (disciplinas.contains(disciplina)) {
             if (notasPorDisciplina.get(disciplina) != null) {

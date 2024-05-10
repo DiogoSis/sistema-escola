@@ -11,7 +11,7 @@ public class Aluno {
         this.nome = nome;
         this.idade = idade;
         this.matricula = matricula;
-        this.notas = new double[4]; // Inicializa o array de notas com 4 elementos (por exemplo, para 4 bimestres)
+        this.notas = new double[4];
     }
 
     // Métodos

@@ -5,7 +5,6 @@ public class Diretor {
     private String cpf;
     private String departamento;
 
-    // Construtor
     public Diretor(String nome, String cpf, String departamento) {
         this.nome = nome;
         this.cpf = cpf;

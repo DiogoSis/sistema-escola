@@ -14,13 +14,13 @@ public class Biblioteca {
         this.alunosRegistrados = new ArrayList<>();
     }
 
-    // Método para registrar um aluno na biblioteca
+    //registrar um aluno na biblioteca
     public void registrarAluno(Aluno aluno) {
         alunosRegistrados.add(aluno);
         System.out.println("Aluno " + aluno.getNome() + " registrado na biblioteca.");
     }
 
-    // Método para remover o registro de um aluno na biblioteca
+    //remover o registro de um aluno na biblioteca
     public void removerRegistroAluno(Aluno aluno) {
         if (alunosRegistrados.contains(aluno)) {
             alunosRegistrados.remove(aluno);
