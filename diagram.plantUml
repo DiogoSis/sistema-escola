@@ -1,0 +1,101 @@
+@startuml diagrama de sistema de escola
+
+package Pessoa {
+    class Aluno {
+        -String nome
+        -int idade
+        -String matricula
+        -double[] notas
+
+        + setNotas(bimestre, nota)
+        + calcularMedia()
+        +getNome()
+        +setNome(nome)
+        +getIdade()
+        +setIdade(idade)
+        +getMatricula()
+        +setMatricula(matricula)
+        +getNotas()
+        +setNotas(notas)
+    }
+
+    class Diretor {
+        -String nome
+        -String cpf
+        -String departamento
+
+        +getNome()
+        +setNome(nome)
+        +getDepartamento()
+        +setDepartamento(departamento)
+    }
+
+    class Professor {
+        -String nome
+        -List<String>disciplinas
+        -Map<String, Map<String, Double>>notasPorDisciplinas
+
+        +AdicionarDisciplina(disciplina)
+        +atribuirNota(disciplina, aluno, nota)
+        +getNome()
+        +setNome(nome)
+        +getDisciplina()
+        +setDisciplina(disciplinas)
+        +getNotasPorDisciplinas()
+        +setNotasPorDisciplinas(notasPorDisciplina)
+    }
+
+}
+
+package Estrutura{
+    class Biblioteca{
+        -String nome
+        -List<Aluno> alunosRegistrados
+
+        +registrarAluno(aluno)
+        +removerRegistroAluno(aluno)
+        +getNome()
+        +setNome(nome)
+        +getAlunosRegistrados()
+        +setAlunosRegistrados(alunosRegistrados)
+    }
+
+    class Quadra{
+        -String tipo
+        -boolean disponivel
+
+        +reservar()
+        +liberar()
+        +getTipo()
+        +setTipo(tipo)
+        +isDisponivel()
+        +setDisponivel(disponivel)
+    }
+
+    class SalaDeAula{
+        -String nome
+        -int capacidade
+        -List<Aluno> alunosPresentes
+        -Professor professorResponsavel
+
+        +adicionarAluno(aluno)
+        +getNome()
+        +setNome(nome)
+        +getCapacidade()
+        +setCapacidade(capacidade)
+        +getAlunosPresentes()
+        +setAlunosPresentes(alunosPresentes)
+        +getProfessorResponsavel()
+        +setProfessorResponsavel(professorResponsavel)
+    }
+}
+
+Biblioteca "1" -- "0..*" Aluno : possui
+SalaDeAula "1" -- "0..*" Aluno : tem
+Professor "*" -- "1" SalaDeAula : ministra aula
+Aluno "1" -- "0..1" Professor : tem
+Quadra -- Aluno : utiliza
+Aluno -- Quadra : utiliza
+
+
+@enduml
